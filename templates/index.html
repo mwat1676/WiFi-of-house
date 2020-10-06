@@ -14,7 +14,7 @@
     <style>
         @font-face {
             font-family: myFirstFont;
-            src: url(/static/webfonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf);
+            src: url(/static/webfonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf);
         }
         .whitegrip{color:#714cdf;}
         .con {
@@ -22,10 +22,102 @@
         }
         .pCon{
             font-family: myFirstFont;
-            color: #13a063;    
+            color: #7c6900;
         }
         .authors:hover{
             color:#13a063;
+        }
+        #header {
+            color:#7c6900;
+            font-size: 45px;
+            text-transform: uppercase;
+        }
+        #sub-header {
+            font-size: 30px;
+        }
+        .navbar-brand {
+            color: #7c6900;
+        }
+        .nav-link {
+            color: #7c6900;
+        }
+        h3 {
+            color: #7c6900;
+        }
+        #cover-caption {
+            position: relative;
+            top: 60px;
+        }
+        #ssid_text {
+            color: #aa9100;
+        }
+        #password_text {
+            color: #aa9100;
+        }
+        .border {
+            height: 81%;
+            border: 1px solid #028802!important;
+            border-top-color: #028802 !important;
+            border-top-style: solid !important;
+            border-top-width: 1px !important;
+            border-right-color: #028802 !important;
+            border-right-style: solid !important;
+            border-right-width: 1px !important;
+            border-bottom-color: #028802!important;
+            border-bottom-style: solid !important;
+            border-bottom-width: 1px !important;
+            border-left-color: #028802 !important;
+            border-left-style: solid !important;
+            border-left-width: 1px !important;
+            border-image-source: initial !important;
+            border-image-slice: initial !important;
+            border-image-width: initial !important;
+            border-image-outset: initial !important;
+            border-image-repeat: initial !important;
+        }
+        .btn-outline-primary {
+            color: #7c6900;
+            border-color: #028802;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        /*
+        .form-control {
+            display: block;
+            width: 95%;
+            padding-right: 15%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #1a0cda;
+            background-color: #28293e;
+            background-clip: padding-box;
+            border: 1px solid #028802;
+            border-radius: 20px;
+            -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+            transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+            -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        }
+        */
+        #ssid_input {
+            width: 30%;
+            margin-right: 10px;
+            position: relative;
+            left: 35%;
+            text-align: center;
+            margin-top: -5px;
+            
+        }
+        #password_input {
+            width: 30%;
+            position: relative;
+            left: 35%;
+            text-align: center;
+            margin-top: -5px;
         }
     </style>
   </head>
@@ -33,7 +125,7 @@
     <!-- navbar -->
     <div class="navCon">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand con" href="http://127.0.0.1:5001">Easy WiFi Login</a>
+            <a class="navbar-brand con" style="font-size: 25px;" href="http://127.0.0.1:5001">Easy WiFi Login</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-grip-lines whitegrip"></i>
             </button>
@@ -69,15 +161,16 @@
                 <div id="container" class="container">
                     <div class="row">
                         <div class="col-sm-10 offset-sm-1 text-center">
-                            <h1 class="display-3 con">Create WiFi QR Code</h1>
-                            <h3><p class="pCon">Now quickly share your WiFi credentials with your friends and family!</p></h3>
+                            <h1 class="display-3 con" id="header">· Create · a · <span style="font-family: 'Lucida Sans'; font-size: 45px; font-weight:lighter; color: #7c6900;">WiFi QR</span> · Code ·</h1>
+                            <h4><p class="pCon">With this app you can quickly share your WiFi credentials</p></h4>
                             <div class="info-form border">
                                 <h3 class="con mx-auto mt-4">Enter Your WiFi credentials</h3>
-                                <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4" style="color:#10d109; position: relative;"></i>
+                                <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4" style="color:#008812; position: relative;"></i>
                                 <form method="POST">
                                     <div class="form-group">
-                                      <label class="pCon" id="ssid_text">SSID</label>
-                                      <input type="text" class="form-control con" id="ssid_input" placeholder="Enter SSID. This is the name of your WiFi router" name="ssid" required>
+                                        <label class="pCon" id="ssid_text">SSID</label>
+                                        <input type="text" class="form-control con" id="ssid_input" placeholder="Enter SSID" name="ssid" required>
+                                        <label style="color: #990000;">This is the name of your WiFi router</label>
                                     </div>
                                     <div class="form-group">
                                       <label class="pCon" id="password_text">Password</label>
@@ -99,19 +192,19 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h4 class="modal-title con" id="exampleModalLabel">About This Page</h4>
+            <h4 class="modal-title con" id="exampleModalLabel">About This App</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body con">
-                <p style="margin: 0px;" class="pCon"><b>What does this app do?</b></p>
-                <p>It is a simple web application which allows you to share your WiFi credentials instantly by scanning a QR code with a your smart device.</p>
-                <p style="margin: 0px;" class="pCon"><b>How does this work?</b></p>
-                <p>It generates a PDF file of a QR code, which contains your WiFi credentials. You can print out the PDF or save it to your computer / phone. Everyone can then simply scan the QR code to instantly connect to your WiFi.</p>
+                <p style="margin: 0px; color: #a18900;" class="pCon"><b>What does this app do?</b></p>
+                <p style="font-family:monospace; font-size: 18px;">It is a simple web application which allows you to share your WiFi credentials instantly by scanning a QR code with a your smart device.</p>
+                <p style="margin: 0px; color: #a18900;" class="pCon"><b>How does this work?</b></p>
+                <p style="font-family:monospace; font-size: 18px;">It generates a PDF file of a QR code, which contains your WiFi credentials. You can print out the PDF or save it to your computer / phone. Everyone can then simply scan the QR code to instantly connect to your WiFi.</p>
                 
-                <p style="margin: 0px;" class="pCon"><b>Does this app store everyone's credentials in a database somewhere?</b></p>
-                <p>No, it does NOT store your WiFi credentials or any other kind of information about you.</p>
+                <p style="margin: 0px; color: #a18900;" class="pCon"><b>Does this app store everyone's credentials in a database somewhere?</b></p>
+                <p style="font-family:monospace; font-size: 18px;">No, it does NOT store your WiFi credentials or any other kind of information about you.</p>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
