@@ -7,26 +7,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-neon-glow.min.css') }}">
     <!-- FontAwesome -->
-    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+    <link href="..\static\css\all.min.css" rel="stylesheet">
     <title>WiFi of House</title>
     <style>
-        @font-face {
-            font-family: myFirstFont;
-            src: url({url_for('static', filename='webfonts/CONSOLA.TTF')};
+        body {
+            background-color: rgb(1, 0, 31);
+            color: rgb(177, 159, 0);
+            text-align: center;
         }
-        .whitegrip{color:#714cdf;}
+        .whitegrip{color:#10d109;}
         .con{font-family: myFirstFont;}
         .pCon{
             font-family: myFirstFont;
-            color: #13a063;    
+            color: rgb(177, 159, 0);   
         }
+        .fa-wifi:before {
+            content: "\f1eb";
+            position:relative;
+            top: -10px;
+        }
+        
     </style>
+    <link rel="icon" href="..\static\images\icon.png">
   </head>
   <body>
     <!-- navbar -->
     <div class="navCon">
         <nav class="navbar navbar-expand-lg">
-            <H1>WiFi of House</H1>
+            <a class="display-3 con">Easy WiFi Login</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-grip-lines whitegrip"></i>
             </button>
@@ -34,6 +42,11 @@
                 <ul class="navbar-nav mr-auto">
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link con" href="https://github.com/mwat1676" data-toggle="tooltip" data-placement="bottom" title="Matt's Github" rel="tooltip">
+                            <i class="fab fa-github"></i> mwat1676
+                        </a>
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link con" href="https://github.com/singhkumarpratik/" data-toggle="tooltip" data-placement="bottom" title="Pratik's Github" rel="tooltip">
                             <i class="fab fa-github"></i> Pratik
@@ -57,19 +70,19 @@
                 <div id="container" class="container">
                     <div class="row">
                         <div class="col-sm-10 offset-sm-1 text-center">
-                            <h1 class="display-3 con">Create WiFi QR Sign</h1>
-                            <p class="pCon">Now quickly share your WiFi credentials with your friends and family!</p>
+                            <h1 class="display-3 con">Create WiFi QR Code</h1>
+                            <h3><p class="pCon">Now quickly share your WiFi credentials with your friends and family!</p></h3>
                             <div class="info-form border">
                                 <h3 class="con mx-auto mt-4">Enter Your WiFi credentials</h3>
-                                <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4" style="color:#714cdf"></i>
+                                <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4" style="color:#10d109; position: relative;"></i>
                                 <form method="POST">
                                     <div class="form-group">
-                                      <label class="pCon">SSID</label>
-                                      <input type="text" class="form-control con" placeholder="Enter SSID. This is the name of your WiFi router" name="ssid" required>
+                                      <label class="pCon" id="ssid_text">SSID</label>
+                                      <input type="text" class="form-control con" id="ssid_input" placeholder="Enter SSID. This is the name of your WiFi router" name="ssid" required>
                                     </div>
                                     <div class="form-group">
-                                      <label class="pCon">Password</label>
-                                      <input type="password" class="form-control con" placeholder="Enter Password" name="pwd" required>
+                                      <label class="pCon" id="password_text">Password</label>
+                                      <input type="password" class="form-control con" id="password_input" placeholder="Enter Password" name="pwd" required>
                                     </div>
                                     <input type="submit" class="btn btn-outline-primary mx-auto mt-2 mb-2 con" value="Generate PDF" name="submit">
                                   </form>
@@ -98,7 +111,6 @@
                         <p>Our application generates a PDF file of a QR code, which contains your WiFi credentials. You can take a printout of the PDF file. Everyone can then simply scan the QR code to instantly connect to your WiFi.</p>
                         
                         <p style="margin: 0px;" class="pCon"><b>Wow. Who made this awesome app?</b></p>
-                        <p>Created by <a href="https://github.com/singhkumarpratik/" class="authors" style="text-decoration: none;">Pratik</a>.</p>
                         <p style="margin: 0px;" class="pCon"><b>Do you store our WiFi credentials in your database?</b></p>
                         <p>No, We do not store your WiFi credentials or any other kind of information about you.</p>
             </div>
