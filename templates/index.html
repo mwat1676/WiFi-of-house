@@ -1,7 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-neon-glow.min.css') }}">
+    <!-- FontAwesome -->
+    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
     <title>WiFi of House</title>
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url({url_for('static', filename='webfonts/CONSOLA.TTF')};
+        }
+        .whitegrip{color:#714cdf;}
+        .con{font-family: myFirstFont;}
+        .pCon{
+            font-family: myFirstFont;
+            color: #13a063;    
+        }
+        .authors:hover{
+            color:#13a063;
+        }
+    </style>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
   </head>
   <body>
     <!-- navbar -->
